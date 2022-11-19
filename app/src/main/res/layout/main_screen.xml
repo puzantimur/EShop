@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/back_grey">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_location"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_8"
+            android:gravity="bottom"
+            android:text="@string/gomel_belarus"
+            android:textColor="@color/black"
+            app:drawableStartCompat="@drawable/ic_outline_location_on_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/settings_filter"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:background="@drawable/ic_baseline_filter_alt_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/main_screen_select_category"
+            android:layout_width="@dimen/dp_194"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/default_padding_decoration"
+            android:layout_marginTop="@dimen/default_padding_decoration"
+            android:fontFamily="@font/mark"
+            android:text="@string/select_category"
+            android:textColor="@color/black_blue"
+            android:textSize="@dimen/sp_24"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_location" />
+
+        <TextView
+            android:id="@+id/text_view_all"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_19"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_marginEnd="@dimen/dp_33"
+            android:fontFamily="@font/mark"
+            android:text="@string/view_all"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_location" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/main_screen_select_category"
+            tools:itemCount="3"
+            tools:listitem="@layout/category_item" />
+
+        <EditText
+            android:id="@+id/search_item"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_26"
+            android:layout_marginTop="@dimen/dp_36"
+            android:background="@drawable/ellipse_white"
+            android:drawableStart="@drawable/ic_search"
+            android:hint="@string/search"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_category" />
+
+        <ImageView
+            android:id="@+id/ellipse_qr"
+            android:layout_width="@dimen/dp_34"
+            android:layout_height="@dimen/dp_34"
+            android:layout_marginTop="@dimen/dp_36"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:background="@drawable/ellipse"
+            android:backgroundTint="@color/orange"
+            android:foreground="@drawable/ic_baseline_qr_code_24"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/search_item"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_category"
+            tools:ignore="UnusedAttribute"
+            tools:targetApi="m" />
+
+        <TextView
+            android:id="@+id/hot_sales"
+            android:layout_width="@dimen/dp_193"
+            android:layout_height="@dimen/dp_32"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/dp_17"
+            android:layout_marginTop="@dimen/default_padding_decoration"
+            android:fontFamily="@font/mark"
+            android:text="@string/hot_sales"
+            android:textColor="@color/black_blue"
+            android:textSize="@dimen/sp_25"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_item" />
+
+        <TextView
+            android:id="@+id/text_see_more"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_19"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_marginEnd="@dimen/dp_33"
+            android:fontFamily="@font/mark"
+            android:text="@string/see_more"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/sp_15"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_item" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/hot_sales_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hot_sales" />
+
+        <TextView
+            android:id="@+id/best_sellers"
+            android:layout_width="@dimen/dp_193"
+            android:layout_height="@dimen/dp_32"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/dp_17"
+            android:layout_marginTop="@dimen/default_padding_decoration"
+            android:fontFamily="@font/mark"
+            android:text="@string/best_seller"
+            android:textColor="@color/black_blue"
+            android:textSize="@dimen/sp_25"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hot_sales_recycler" />
+
+        <TextView
+            android:id="@+id/text_see_more_2"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_19"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_marginEnd="@dimen/dp_33"
+            android:fontFamily="@font/mark"
+            android:text="@string/see_more"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/sp_15"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hot_sales_recycler" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/best_sales_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:clipToPadding="false"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_sellers"
+            tools:itemCount="3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

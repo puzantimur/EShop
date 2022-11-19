@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_explorer"
+    app:startDestination="@id/fragment_explorer">
+
+    <fragment
+        android:id="@+id/fragment_explorer"
+        android:name="com.example.eshop.presentation.ui.fragments.MainScreenFragment"
+        tools:layout="@layout/main_screen">
+
+        <action
+            android:id="@+id/to_details"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim">
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.example.eshop.presentation.ui.fragments.ProductDetailsFragment"
+        tools:layout="@layout/product_details_fragment">
+
+    </fragment>
+
+</navigation>
