@@ -71,9 +71,6 @@ class ProductDetailsFragment : Fragment() {
             back.setOnClickListener {
                 findNavController().popBackStack()
             }
-            favorite.setOnClickListener {
-                var a = false
-            }
             addToCart.setOnClickListener {
                 Toast.makeText(requireContext(), "Added to cart", Toast.LENGTH_SHORT).show()
             }

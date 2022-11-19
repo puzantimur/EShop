@@ -106,7 +106,7 @@
             android:id="@+id/ellipse_qr"
             android:layout_width="@dimen/dp_34"
             android:layout_height="@dimen/dp_34"
-            android:layout_marginTop="@dimen/dp_36"
+            android:layout_marginTop="@dimen/dp_42"
             android:layout_marginBottom="@dimen/dp_24"
             android:background="@drawable/ellipse"
             android:backgroundTint="@color/orange"

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eshop.databinding.DetailsItemBinding
-import com.example.eshop.domain.model.Detail
+import com.example.domain.eshop.domain.model.Detail
 
 class DetailAdapter(
     private val context: Context

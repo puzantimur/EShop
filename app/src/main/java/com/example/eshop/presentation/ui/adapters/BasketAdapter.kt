@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.eshop.databinding.BasketItemBinding
-import com.example.eshop.domain.model.Basket
+import com.example.domain.eshop.domain.model.Basket
+import com.example.domain.eshop.domain.model.BestSeller
 
 class BasketAdapter(
     context: Context,
+    private val onDeleteClicked: (Basket) -> Unit
 ) : ListAdapter<Basket, BasketViewHolder>(DiffUtil) {
 
     private val layoutInflater = LayoutInflater.from(context)
@@ -19,6 +21,7 @@ class BasketAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketViewHolder {
         return BasketViewHolder(
             binding = BasketItemBinding.inflate(layoutInflater, parent, false),
+            onDeleteClicked = onDeleteClicked
         )
     }
 
@@ -46,7 +49,8 @@ class BasketAdapter(
 }
 
 class BasketViewHolder(
-    private val binding: BasketItemBinding
+    private val binding: BasketItemBinding,
+    private val onDeleteClicked: (Basket) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Basket) {
@@ -66,6 +70,10 @@ class BasketViewHolder(
                 countPurchases++
                 count.text = countPurchases.toString()
             }
+            delete.setOnClickListener {
+                onDeleteClicked(item)
+            }
+
 
         }
     }

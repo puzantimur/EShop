@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -24,7 +25,12 @@ class ShopFragment : Fragment() {
     private val cartViewModel by viewModel<CartViewModel>()
 
     private val adapter by lazy {
-        BasketAdapter(requireContext())
+        BasketAdapter(requireContext(),
+        onDeleteClicked = {
+            binding.recyclerView.children.iterator().forEach {
+
+            }
+        })
     }
 
     override fun onCreateView(

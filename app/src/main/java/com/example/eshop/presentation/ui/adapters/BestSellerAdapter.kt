@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.eshop.R
 import com.example.eshop.databinding.BestSellerItemBinding
-import com.example.eshop.domain.model.BestSeller
+import com.example.domain.eshop.domain.model.BestSeller
 
 class BestSellerAdapter(
     context: Context,

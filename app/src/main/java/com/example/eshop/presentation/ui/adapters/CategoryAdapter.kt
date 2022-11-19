@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eshop.R
 import com.example.eshop.databinding.CategoryItemBinding
-import com.example.eshop.domain.model.Category
+import com.example.domain.eshop.domain.model.Category
 
 class CategoryAdapter(
     context: Context,

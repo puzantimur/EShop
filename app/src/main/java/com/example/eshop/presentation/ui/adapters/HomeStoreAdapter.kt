@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.eshop.databinding.HotSalesItemBinding
-import com.example.eshop.domain.model.HomeStore
+import com.example.domain.eshop.domain.model.HomeStore
 
 class HotSalesAdapter(
     context: Context,
